@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+	<title>Basic Crud App</title>
+</head>
+<body ng-controller="ProductController">
+
+<table>
+	<tr>
+		<th>Id</th>
+		<th>Name</th>
+		<th>Amout</th>	
+		<th>Delete</th>
+		<th>Edit</th>
+	</tr>
+	<tr ng-repeat="product in productList">
+		<td>{{product.id}}</td>
+		<td>{{product.name}}</td>
+		<td>{{product.amount}}</td>
+		
+		<td>
+			<a href="#" ng-click="del(product.id)">Delete</a>
+			<a href="#" ng-click="edit(product.id)">Edit</a>
+		</td>
+	
+	</tr>
+</table>
+	
+<h1>Product info</h1>
+<table>
+	<tr>
+		<td>Id: </td>
+		<td><input type="text" ng-model="id"></td>
+	</tr>
+
+	<tr>
+		<td>Name: </td>
+		<td><input type="text" ng-model="name"></td>
+	</tr>
+
+	<tr>
+		<td>Amount: </td>
+		<td><input type="text" ng-model="amount"></td>
+	</tr>
+</table>
+<span><button ng-click="update()">Update</button></span>
+<span><button ng-click="add()">Add</button></span>
+
+
+<script src="angular.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
